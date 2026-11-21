@@ -1,0 +1,8 @@
+{
+  "id": "flexi-prompt",
+  "name": "Flexi Prompt",
+  "description": "Pick which system prompt instructions apply each time you start a session.",
+  "requirements": {
+    "paseo": ">=0.17.0-beta.1"
+  }
+}
