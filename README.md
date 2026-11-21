@@ -40,15 +40,16 @@ that setting and into a prompt item to make it optional; otherwise it is sent tw
 
 ## Install
 
-Plugins must be enabled on the daemon (**Settings → Plugins → Enable plugins**).
+Plugins must be enabled on the daemon (**Settings → Plugins → Enable plugins**). A plugin is
+trusted code that runs with the daemon's access, so read the source before installing one.
 
 ```bash
-npm install
-paseo plugin install /absolute/path/to/paseo-flexi-prompt-plugin
+paseo plugin add git:Strainy/paseo-flexi-prompt-plugin
 paseo plugin ls   # flexi-prompt should be "running"
 ```
 
-After changing the source, apply it with `paseo plugin reload flexi-prompt`.
+Or paste `git:Strainy/paseo-flexi-prompt-plugin` into **Settings → Plugins → Plugin source**.
+Pick up later changes with `paseo plugin update flexi-prompt`.
 
 Requires Paseo 0.17.0-beta.1 or later on both the daemon and the app.
 
@@ -66,9 +67,14 @@ the reason is logged: `paseo plugin logs flexi-prompt`.
 
 ## Develop
 
+Install a checkout instead of the Git source, so edits can be reloaded:
+
 ```bash
+npm install
+paseo plugin install /absolute/path/to/paseo-flexi-prompt-plugin
 npm run typecheck
 npm test
+paseo plugin reload flexi-prompt   # apply source changes
 ```
 
 | Path                 | What it holds                                                              |
